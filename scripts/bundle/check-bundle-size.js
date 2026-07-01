@@ -2,7 +2,7 @@
 /**
  * Lightweight bundle size check.
  * - Scans .next/static/chunks for JS bundles.
- * - If build output doesn't exist, exits 0 with guidance.
+ * -- If build output doesn't exist, exits 0 with guidance.
  */
 
 import fs from 'fs';

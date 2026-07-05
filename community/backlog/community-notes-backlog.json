@@ -21,9 +21,7 @@
     "position": "bottom",
     "text": "Routine note: small non-blocking documentation edits may appear here.",
     "issued": true,
-    "completed": false,
-    "completedBy": "sanketpatel32",
-    "completedPR": 20972
+    "completed": false
   },
   {
     "id": 4,

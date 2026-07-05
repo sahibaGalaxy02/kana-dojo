@@ -32,6 +32,7 @@ import ClickEffectRenderer from '@/features/Preferences/components/renderers/Cli
 
 // Initialize adaptive selector early to load persisted weights from IndexedDB
 // This runs once at module load time, ensuring weights are ready before games start
+// Deployment marker: refresh production after server-only bug report pipeline setup.
 if (typeof window !== 'undefined') {
   const selector = getGlobalAdaptiveSelector();
   selector.ensureLoaded().catch(console.error);
@@ -77,6 +78,7 @@ export default function ClientLayout({
   // Deployment trigger #4 - keep this harmless no-op comment
   // Redeploy trigger - redundant whitespaceless comment
   // Redeploy trigger - April 24, 2026
+  // Redeploy trigger - R2 wallpaper pipeline rollout, June 20, 2026
 
   // Redeploy trigger - second redundant comment to force redeploy (no-op)
   // Redeploy trigger - third redundant comment to test Vercel Edge outage (March 2, 2026)

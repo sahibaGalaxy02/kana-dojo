@@ -136,5 +136,41 @@
     "romaji": "Me ga nai",
     "english": "No eyes",
     "meaning": "Have a weakness for something. (Set 6)"
-  }
+  },
+  {
+    "japanese": "気が短い",
+    "romaji": "Ki ga mijikai",
+    "english": "Short-tempered",
+    "meaning": "Impatient temperament. (Set 4)"
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 3)"
+  },
+  {
+    "japanese": "手を抜く",
+    "romaji": "Te o nuku",
+    "english": "Cut corners",
+    "meaning": "Do less than one should. (Set 4)"
+  },
+  {
+    "japanese": "腰が重い",
+    "romaji": "Koshi ga omoi",
+    "english": "Heavy hips",
+    "meaning": "Slow to start doing something. (Set 6)"
+  },
+  {
+    "japanese": "鼻が高い",
+    "romaji": "Hana ga takai",
+    "english": "High nose",
+    "meaning": "Feel proud. (Set 5)"
+  },
+  {
+  "japanese": "立つ鳥跡を濁さず",
+  "romaji": "Tatsu tori ato o nigosazu",
+  "english": "A bird leaves no mess",
+  "meaning": "Leave cleanly without trouble. (Set 1)"
+}
 ]

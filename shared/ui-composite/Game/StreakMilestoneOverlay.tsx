@@ -14,9 +14,16 @@ import { suppressContinueKeyboardShortcuts } from '@/shared/utils/game/continueS
 import { ENABLE_EVERY_QUESTION_AD_OVERLAY } from '@/shared/utils/game/streakMilestones';
 
 const STREAK_MILESTONE_AD_SLOT = '2642983933';
+export const STREAK_MILESTONE_DONATION_EVENT =
+  'kana-dojo:streak-milestone-donation';
 const ENABLE_STREAK_MILESTONE_DECORATIONS = true;
-const ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS = false;
+// Let Enter/Space dismiss the overlay so type-mode keyboard users don't
+// accidentally trigger the underlying "next" control (#27829).
+const ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS = true;
+// Keep the placement code intact, but do not mount AdSense during the audit.
+const ENABLE_STREAK_MILESTONE_AD = false;
 const isStreakMilestoneAdEnabled =
+  ENABLE_STREAK_MILESTONE_AD &&
   process.env.NODE_ENV === 'production' &&
   process.env.NEXT_PUBLIC_VERCEL_ENV === 'production';
 
@@ -83,7 +90,15 @@ export default function StreakMilestoneOverlay({
   const skipButtonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    if (!ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS || !milestone) return;
+    if (!milestone) return;
+
+    window.dispatchEvent(new Event(STREAK_MILESTONE_DONATION_EVENT));
+
+    // Move keyboard focus to Skip so Enter targets this dialog, not the
+    // type-mode "next" button still mounted underneath.
+    skipButtonRef.current?.focus();
+
+    if (!ENABLE_STREAK_MILESTONE_KEYBOARD_SHORTCUTS) return;
 
     const isSkipShortcut = (event: KeyboardEvent) =>
       event.key === 'Enter' || event.code === 'Space' || event.key === ' ';
@@ -98,6 +113,7 @@ export default function StreakMilestoneOverlay({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (!isSkipShortcut(event)) return;
+      if (document.querySelector('[data-donation-modal]')) return;
 
       absorbShortcut(event);
       if (event.repeat) return;
@@ -106,6 +122,7 @@ export default function StreakMilestoneOverlay({
       skipButtonRef.current?.click();
     };
 
+    // Capture-phase listeners win over the game Input "continue" handlers.
     window.addEventListener('keydown', handleKeyDown, true);
     window.addEventListener('keyup', absorbShortcut, true);
     window.addEventListener('keypress', absorbShortcut, true);

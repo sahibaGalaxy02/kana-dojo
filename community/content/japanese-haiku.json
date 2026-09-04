@@ -105,12 +105,37 @@
   "poet": "Masaoka Shiki",
   "season": "Autumn",
   "kigo": "Persimmon (kaki)",
-  "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
-},
+    "notes": "A quintessential autumn haiku contrasting the everyday act of eating fruit with the timeless ringing of a temple bell."
+  },
   {
-  "japanese": "秋深き
-隣は何を
-する人ぞ",
+    "japanese": "雀の子\nそこのけそこのけ\nお馬が通る",
+    "romaji": "Suzume no ko / soko noke soko noke / ouma ga toru",
+    "english": "Little sparrows, move aside, the horse is coming through.",
+    "poet": "Kobayashi Issa",
+    "season": "Spring",
+    "kigo": "Sparrow chicks (suzume no ko)",
+    "notes": "Playful and warm, characteristic of Issa's tone."
+  },
+  {
+    "japanese": "古池や\n蛙飛びこむ\n水の音",
+    "romaji": "Furu ike ya / kawazu tobikomu / mizu no oto",
+    "english": "An old pond; a frog jumps in; the sound of water.",
+    "poet": "Matsuo Basho",
+    "season": "Spring",
+    "kigo": "Frog (kawazu)",
+    "notes": "A foundational haiku focused on stillness and sudden movement."
+  },
+  {
+    "japanese": "朝顔に\nつるべ取られて\nもらい水",
+    "romaji": "Asagao ni / tsurube torarete / morai mizu",
+    "english": "Morning glories took my well-bucket; I asked next door for water.",
+    "poet": "Kaga no Chiyo",
+    "season": "Summer",
+    "kigo": "Morning glory (asagao)",
+    "notes": "Famous for gentle empathy toward nature."
+  },
+  {
+  "japanese": "秋深き隣は何をする人ぞ",
   "romaji": "Aki fukaki / tonari wa nani o / suru hito zo",
   "english": "In deep autumn, what kind of person lives next door?",
   "poet": "Matsuo Basho",
